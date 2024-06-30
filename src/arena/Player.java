@@ -15,4 +15,20 @@ public class Player {
         this.attack = Pattack;
     }
 
+    // Additional methods to extract player attributes information
+    public String getName(){
+        return this.name;
+    }
+
+    public int getHealth(){
+        return this.health;
+    }
+
+    public int getStrength(){
+        return this.strength;
+    }
+
+    public int getAttack(){
+        return this.attack;
+    }
 }
