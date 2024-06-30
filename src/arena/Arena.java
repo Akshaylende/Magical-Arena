@@ -12,14 +12,28 @@ public class Arena {
         Player playerB = createPlayer("B", sc);
 
         sc.close();
-
+        boolean firstChance = true;
+        
         // starts playing our game untill any player's health reaches zero
         while (playerA.getHealth() > 0 && playerB.getHealth() > 0) {
+            
+            // comparing players healths for firstChance following our rules
+            if (firstChance && playerB.getHealth() < playerA.getHealth()) {
+                playTurn(playerB, playerA);
+                if (playerA.getHealth() <= 0) {
+                    System.out.println("Player B wins!");
+                    break;
+                }
+                firstChance = false;
+            }
+
             playTurn(playerA, playerB);
             if (playerB.getHealth() <= 0) {
                 System.out.println("Player A wins!");
                 break;
             }
+
+            //switching turns 
             playTurn(playerB, playerA);
             if (playerA.getHealth() <= 0) {
                 System.out.println("Player B wins!");
@@ -58,7 +72,7 @@ public class Arena {
         // Logging information for user for each turn
         System.out.println(Attacker.getName() + " attacks with roll " + attackRoll +
                 ", " + Defender.getName() + " defends with roll " + defendRoll +
-                ". Damage: " + damage + ". " + Defender.getName() + "'s health: " + Defender.getHealth());
+                ". Damage caused: " + damage + ". " + Defender.getName() + "'s health: " + Defender.getHealth());
     }
 
     // This method implements dice functionality in our game
