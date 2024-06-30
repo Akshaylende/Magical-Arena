@@ -8,7 +8,7 @@ public class Player {
 
     // Constructor for creating new player in the game with the name, health,
     // strength & attack initialization
-    Player(String Pname, int Phealth, int Pstrength, int Pattack) {
+    public Player(String Pname, int Phealth, int Pstrength, int Pattack) {
         this.name = Pname;
         this.health = Phealth;
         this.strength = Pstrength;
@@ -33,8 +33,7 @@ public class Player {
     }
 
     // Implementing damage taking ability of a player by reducing damage from health
-    public void getDamage(int damage)
-    {   
+    public void getDamage(int damage) {
         this.health = this.health > damage ? this.health - damage : 0;
     }
 }

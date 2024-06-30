@@ -13,10 +13,10 @@ public class Arena {
 
         sc.close();
         boolean firstChance = true;
-        
+
         // starts playing our game untill any player's health reaches zero
         while (playerA.getHealth() > 0 && playerB.getHealth() > 0) {
-            
+
             // comparing players healths for firstChance following our rules
             if (firstChance && playerB.getHealth() < playerA.getHealth()) {
                 playTurn(playerB, playerA);
@@ -33,7 +33,7 @@ public class Arena {
                 break;
             }
 
-            //switching turns 
+            // switching turns
             playTurn(playerB, playerA);
             if (playerA.getHealth() <= 0) {
                 System.out.println("Player B wins!");
