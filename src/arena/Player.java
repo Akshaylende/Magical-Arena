@@ -16,19 +16,25 @@ public class Player {
     }
 
     // Additional methods to extract player attributes information
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 
-    public int getHealth(){
+    public int getHealth() {
         return this.health;
     }
 
-    public int getStrength(){
+    public int getStrength() {
         return this.strength;
     }
 
-    public int getAttack(){
+    public int getAttack() {
         return this.attack;
+    }
+
+    // Implementing damage taking ability of a player by reducing damage from health
+    public void getDamage(int damage)
+    {   
+        this.health = this.health > damage ? this.health - damage : 0;
     }
 }
